@@ -1,29 +1,32 @@
+<script lang="ts"></script>
+<template>
+ <client-only>
+  <NavBar />
+ <div id="igMain" class="ig-main"></div>
+ <!-- <Cookies /> -->
+ <!-- <Copyright /> -->
+ </client-only>
+</template>
 <script setup lang="ts">
-const title = ref("impactful_games | Home");
-const description = ref("Game catalouge detailing various games with interactive features.");
+import { useSeoMeta, useHead } from '@vueuse/head';
+const title = "Impactful Games | Home";
+const description = "A game catalogue with interactive features that provide detailed information on video games across a wide range of genres, inspired by the structure and functionality of platforms like MyAnimeList.";
 useSeoMeta({
- title: () => title.value,
- description: () => `${title.value} - ${description.value}`,
+ title: () => title,
+ description: () => description,
  charset: "utf-8",
- viewport: "width=device-width, initial-scale=1.0",
- robots: "index, follow",
- ogTitle: () => title.value,
- ogDescription: () => `${title.value} - ${description.value}`,
- // ogImage: "https://impactful_games.vercel.app/featured.jpg",
- // twitterCard: "summary_large_image",
+ viewport: "width=device-width, initial-scale=1.0"
+});
+useHead({
+  link: [
+    { rel: 'icon', type: 'image/png', href: '/joystick.png' },
+    { rel: 'stylesheet', href: '/reset.css' },
+    { rel: 'stylesheet', href: '/custom.css' },
+    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Russo+One&display=swap' }
+  ]
 });
 </script>
-
-<template>
-    <Html lang="en">
-    <Head>
-    <Link rel="icon" type="image/png" href="logo.png" />
-    <link rel="stylesheet" href="/reset.css" />
-    </Head>
-    </Html>
-   
-    <client-only>
-    <Welcome />
-    </client-only>
-   </template>
-   <style scoped></style>
+<style scoped></style>
+<style></style>

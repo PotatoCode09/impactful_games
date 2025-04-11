@@ -1,7 +1,7 @@
 <script lang="ts"></script>
 <template>
  <client-only>
- <!-- <NavBar /> -->
+  <NavBar />
  <div id="igMain" class="ig-main"></div>
  <!-- <Cookies /> -->
  <!-- <Copyright /> -->
@@ -18,14 +18,14 @@ useSeoMeta({
  viewport: "width=device-width, initial-scale=1.0"
 });
 useHead({
- link: [
- {rel: 'icon', type: 'image/png', href: '/logo.png'},
- {rel: 'stylesheet', href: '/reset.css'},
- {rel: 'stylesheet', href: '/custom.css'} ,
- {rel: 'preconnect', href: 'https://fonts.googleapis.com'},
- {rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: ''}
- {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Russo+One&display=swap'}
- ]
+  link: [
+    { rel: 'icon', type: 'image/png', href: '/joystick.png' },
+    { rel: 'stylesheet', href: '/reset.css' },
+    { rel: 'stylesheet', href: '/custom.css' },
+    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Russo+One&display=swap' }
+  ]
 });
 </script>
 <style scoped></style>
