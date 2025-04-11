@@ -1,0 +1,58 @@
+Game Catalogue MVP – Use Cases
+
+1. Browse Games by Genre
+- The user selects a genre from the list (e.g., RPG, FPS, Puzzle).
+- The system filters and displays only games that belong to the selected genre.
+- The games are shown with basic information like title, thumbnail, and a brief description.
+
+2. View Game Details
+- The user clicks on a specific game from the list.
+- The system shows detailed information for that game, including:
+  - Full title
+  - Game description
+  - Release date
+  - Developer and publisher
+  - Available platforms (e.g., PC, PS4, Xbox)
+  - Genre tags (e.g., Action, Adventure)
+  - Screenshots or gameplay video (optional for MVP)
+
+3. Search for a Game
+- The user enters a title or keyword into a search bar.
+- The system shows a list of games that match the search query.
+- The user can see search results updated in real-time as they type or after they submit the query.
+
+4. Rate a Game (1–5 stars)
+- A logged-in user can rate a game on a scale from 1 to 5 stars.
+- After the user selects a rating, the system saves it and updates the game’s average rating score.
+- The average rating is visible to all users on the game’s detail page.
+
+5. Comment on a Game
+- A logged-in user can write a comment or review about a game.
+- The comment is displayed under the game’s details along with the user’s name and timestamp.
+- Other users can view comments and read feedback about the game.
+- Optional: Comments could be moderated by an admin in the MVP.
+
+6. Add to Favorites / Wishlist
+- The logged-in user has the option to mark a game as a favorite or add it to a wishlist.
+- A button like "Add to Favorites" or "Add to Wishlist" is visible on the game detail page.
+- The game is saved to the user’s profile, allowing them to easily access it later.
+
+7. Admin: Add/Edit/Delete Games
+- An admin user logs in through a separate admin panel to manage the catalogue.
+- The admin can:
+  - Add new games by entering details like title, description, and genre.
+  - Edit details of existing games (e.g., update descriptions, platforms).
+  - Delete games from the catalogue when necessary.
+
+8. User Authentication (Sign Up / Log In)
+- Users need to sign up for an account with basic information (e.g., email, password).
+- Logged-in users can access features such as rating games, posting comments, and adding games to their wishlist.
+- Users who are not logged in can browse games and view details but cannot interact with the interactive features like rating or commenting.
+
+9. Filter Games by Various Criteria (Optional for MVP)
+- The user can filter games based on different criteria such as:
+  - Platform (e.g., PC, PlayStation, Xbox)
+  - Release year or range (e.g., 2020–2022)
+  - Rating (e.g., games with a rating of 4 stars or higher)
+- The catalogue updates dynamically to show games that match the selected filter criteria.
+ 
