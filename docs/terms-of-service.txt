@@ -1,0 +1,70 @@
+Terms of Service for Game Catalogue Platform
+
+1. Introduction
+Welcome to [Platform Name], a game catalogue platform that allows users to browse, rate, comment, and interact with various video games across multiple genres. By using our platform, you agree to comply with these Terms of Service ("ToS"). If you do not agree, please do not use the platform.
+
+These ToS govern your access to and use of the platform and include provisions related to data privacy, as required under the General Data Protection Regulation (GDPR) and the Data Privacy Act of 2012.
+
+2. User Registration and Account
+To access certain features (e.g., rating, commenting, and creating a wishlist), you must register and create an account. You agree to provide accurate and up-to-date information during the registration process and to update your information as necessary.
+
+- Personal Data: We collect personal data such as your name, email address, and account preferences when you register. This data is necessary for providing our services, and we will handle it in accordance with applicable privacy laws, including the GDPR and the Data Privacy Act of 2012.
+
+3. User Rights and Consent
+By creating an account, you consent to the collection and processing of your personal data as described in our Privacy Policy. You have the right to:
+
+- Access, modify, and delete your personal data.
+- Withdraw consent at any time by contacting us at [Contact Email].
+- Request that we stop processing your data for certain purposes, including marketing.
+- Object to any processing based on legitimate interests.
+
+4. Data Collection and Use
+We collect personal data, including:
+
+- Account Data: Name, email address, and profile information.
+- Interaction Data: Ratings, comments, and wishlist entries.
+- Technical Data: IP address, device information, and usage patterns.
+
+We process this data to:
+
+- Provide the platform's core features (e.g., game rating, comments, and wishlist).
+- Improve our services and user experience.
+- Communicate with users about updates and relevant features.
+- Comply with legal obligations and user requests.
+
+5. Data Sharing
+We do not share your personal data with third parties except in the following circumstances:
+
+- With service providers who assist us in operating the platform (e.g., hosting providers, analytics tools).
+- When required by law, regulation, or legal process.
+- In the event of a business transfer, such as a merger or acquisition.
+
+6. Data Security
+We take reasonable measures to protect your personal data from unauthorized access, loss, or alteration. However, no data transmission over the internet is 100% secure. By using the platform, you acknowledge the inherent risks associated with online data transmission.
+
+7. User Responsibilities
+You are responsible for maintaining the confidentiality of your account credentials and for any activity conducted under your account. You agree not to engage in:
+
+- Posting illegal, harmful, or offensive content.
+- Violating the rights of other users, including harassment or spamming.
+- Using the platform for unauthorized or unlawful purposes.
+
+8. Termination of Account
+We may suspend or terminate your account if you violate these ToS. You may also request to delete your account at any time. Upon account deletion, we will retain your data only as required by law.
+
+9. Privacy Policy
+For more detailed information about how we collect, use, and protect your personal data, please refer to our Privacy Policy.
+
+10. Compliance with GDPR and Data Privacy Act of 2012
+- GDPR: If you are a resident of the European Union, your personal data is processed in accordance with the General Data Protection Regulation (GDPR). You have the right to request access to, correction of, or deletion of your personal data, and the right to object to processing.
+
+- Data Privacy Act of 2012: If you are a resident of the Philippines, we comply with the Data Privacy Act of 2012 and the regulations set by the National Privacy Commission. You have the right to access, correct, or erase your personal data and to object to its processing.
+
+11. Changes to Terms of Service
+We may update these ToS from time to time. Any changes will be posted on this page with an updated "Effective Date." Continued use of the platform after changes constitutes your acceptance of the updated ToS.
+
+12. Contact Us
+If you have any questions or concerns regarding these ToS or our privacy practices, please contact us at:
+
+[Insert Contact Information]
+ 
