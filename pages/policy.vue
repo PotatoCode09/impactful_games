@@ -3,8 +3,7 @@
  <client-only>
   <NavBar />
  <div id="igMain" class="ig-main"></div>
- <!-- <Cookies /> -->
- <!-- <Copyright /> -->
+ <Copyright />
  </client-only>
 </template>
 <script setup lang="ts">
