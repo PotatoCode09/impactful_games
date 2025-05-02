@@ -1,19 +1,30 @@
 <template>
     <client-only>
-    <header class="ig-navbar">
+    <header :class="['ig-navbar', navAdminMode]">
     <nav class="ig-nav-left">
     <a href="/" class="ig-nav-home">
     <img src="/joystick.png" width=20 height=20 class="ig-nav-logo">
     <span>ImpactfulGames</span>
     </a>
     </nav>
-    <nav class="ig-nav-right">
+    <nav id="igNavBasic" class="ig-nav-right ig-hidden">
     <ul>
-    <li><a href="#" class="ig-nav-link">Browse Games by Genre</a></li>
-    <li><a href="#" class="ig-nav-link">View Game Details</a></li>
-    <li><a href="#" class="ig-nav-link">User Authentication</a></li>
+    <li><a href="#" class="ig-nav-link">Trending</a></li>
+    <li><a href="#" class="ig-nav-link">Most Viewed</a></li>
+    <li><a href="#" class="ig-nav-link">Hot</a></li>
+    <li><span id="igNavBasicLogout" class="ig-nav-link">Logout</span></li>
     </ul>
-</nav>
- </header>
- </client-only>
-</template>
+    </nav>
+    <nav id="igNavAdmin" class="ig-nav-right ig-hidden">
+    <ul>
+    <li><a href="#" class="ig-nav-link">Settings</a></li>
+    <li><a href="#" class="ig-nav-link">Reports</a></li>
+    <li><span id="igNavAdminLogout" class="ig-nav-link">Logout</span></li>
+    </ul>
+    </nav>
+    </header>
+    </client-only>
+   </template>
+   <script setup lang="ts">
+   const props = defineProps<{ navAdminMode: string }>();
+   </script>

@@ -1,10 +1,11 @@
 <script lang="ts"></script>
 <template>
-<client-only>
+ <client-only>
  <NavBar :navAdminMode="navAdminMode" />
  <div id="igMain" class="ig-main">
- <span id="igPageTitle" class="ig-page-title ig-hidden">Latest</span>
- <div id="igContainer" class="ig-container"></div>
+ <span id="igSimpleHello" class="ig-simple-hello ig-hidden">
+ Hello, {{ fullName }}!
+ </span>
  </div>
  <Cookies />
  <Copyright />
@@ -12,19 +13,18 @@
 </template>
 <script setup lang="ts">
 import { useSeoMeta, useHead } from "@vueuse/head";
+import { useRouter } from "vue-router";
 const title = "ImpactfulGames";
 const description = "A game catalogue with interactive features that provide detailed information on video games across a wide range of genres, inspired by the structure and functionality of platforms like MyAnimeList.";
-
 useSeoMeta({
  title: () => title,
  description: () => description,
  charset: "utf-8",
  viewport: "width=device-width, initial-scale=1.0",
 });
-
 useHead({
  link: [
- { rel: "icon", type: "image/png", href: "/joystick.png" },
+ { rel: "icon", type: "image/png", href: "/logo.png" },
  { rel: "stylesheet", href: "/reset.css" },
  { rel: "stylesheet", href: "/custom.css" },
  { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -33,6 +33,7 @@ useHead({
  ],
 });
 
+/* Cookies */
 const globalDelay = 500;
 const allowCookies = useCookie<boolean>("allowCookies", {
  sameSite: "none",
@@ -64,44 +65,31 @@ const userLevel = useCookie<number>("userLevel", {
  maxAge: 60 * 60 * 24,
 });
 userLevel.value = userLevel.value ?? -1;
-
 const fullName = useCookie<string>("fullName", {
  sameSite: "none",
  secure: true,
  maxAge: 60 * 60 * 24,
 });
 fullName.value = fullName.value ?? "";
-
-
-type ContentItem = {
- id: string;
- author: string;
- title: string;
- content: string;
- isSynchronized: number;
- createdAt: number;
-};
-type ContentResponse = {
- contents: ContentItem[];
-};
+/* Access Control */
 const router = useRouter();
-const igServer = "https://impactfulgames-api.vercel.app";
-let navAdminMode = userLevel.value >= 2 ? "ig-nav-admin" : "";  
+let navAdminMode = userLevel.value >= 2 ? "ig-nav-admin" : "";
 function getByID<T extends HTMLElement>(id: string) {
  return document.getElementById(id) as T;
 }
+
 function checkAuthorizations() {
  if (!accessToken.value) {
  router.push("/login");
- } else if (userLevel.value >= 2) {
- router.push("/admin");
+ } else if (userLevel.value <= 2) {
+ router.push("/");
  }
  const navBasic = getByID<HTMLDivElement>("igNavBasic");
-  const navAdmin = getByID<HTMLDivElement>("igNavAdmin");
- const navLogout = getByID<HTMLDivElement>("igNavBasicLogout");
- const pageTitle = getByID<HTMLSpanElement>("igPageTitle");
- if (!navBasic || !navAdmin || !navLogout || !pageTitle) return;
- navLogout.addEventListener("click", (e) => {
+ const navAdmin = getByID<HTMLDivElement>("igNavAdmin");
+ const navLogout = getByID<HTMLDivElement>("igNavAdminLogout");
+ const simpleHello = getByID<HTMLSpanElement>("igSimpleHello");
+ if (!navBasic || !navAdmin || !navLogout || !simpleHello) return;
+ navLogout.addEventListener("click", () => {
  retries.value = 0;
  username.value = "";
  accessToken.value = "";
@@ -109,9 +97,9 @@ function checkAuthorizations() {
  fullName.value = "";
  router.push("/login");
  });
- navAdmin.remove();
- navBasic.classList.remove("ig-hidden");
- pageTitle.classList.remove("ig-hidden");
+ navBasic.remove();
+ navAdmin.classList.remove("ig-hidden");
+ simpleHello.classList.remove("ig-hidden");
  loadModal();
 }
 function loadModal() {
@@ -132,11 +120,12 @@ function loadModal() {
  allowAllCookies();
  });
 }
+
 function showCookiePopup(show: boolean = true) {
  const cookieBox = getByID<HTMLDivElement>("igCookieBox");
  const cookieModal = getByID<HTMLDivElement>("igCookieModal");
  if (!cookieBox || !cookieModal) {
- setTimeout(showCookiePopup, 50);
+ setTimeout(() => showCookiePopup(show), 50);
  return;
  }
  if (!show) {
@@ -153,103 +142,42 @@ function allowAllCookies() {
  lastCookieClicked = Date.now();
  allowCookies.value = true;
  showCookiePopup(false);
- loadContents();
 }
 onMounted(() => {
  nextTick(() => {
  checkAuthorizations();
  });
 });
-async function loadContents() {
- if (!accessToken.value) return;
- var rawContents = [] as ContentItem[];
- try {
- const query = new URLSearchParams({
- username: username.value,
- userLevel: String(userLevel.value),
- accessToken: accessToken.value,
- }).toString();
- const response = (await $fetch(`${igServer}/get_contents?${query}`, {
- headers: { "Content-Type": "application/json" },
- method: "GET",
- })) as ContentResponse;
- rawContents = response.contents;
- } catch (e: any) {
- return;
- }
- const container = getByID<HTMLDivElement>("igContainer");
- if (!container) return;
- container.innerHTML = "";
- const contents = renderContents(rawContents) as HTMLElement;
- container.appendChild(contents);
-}
-function renderContents(data: ContentItem[]): HTMLElement {
-  const parent = document.createElement("div");
- parent.className = "ig-contents";
- data.forEach((item, index) => {
- const wrapper = document.createElement("div");
- wrapper.id = `content-${index}`;
- wrapper.className = "ig-content-box";
- const title = document.createElement("h2");
- title.className = "ig-content-title";
- title.textContent = item.title;
- const meta = document.createElement("p");
- const date = new Date(item.createdAt * 1000);
- const published = date.toLocaleDateString("en-US", {
- year: "numeric",
- month: "long",
- day: "numeric",
- });
- meta.textContent = `by ${item.author} • ${published}`;
- meta.className = "ig-content-meta";
- const content = document.createElement("p");
- content.className = "ig-content-data";
- content.textContent = item.content;
- wrapper.append(title, meta, content);
- parent.appendChild(wrapper);
- });
- return parent;
-}
 </script>
 <style>
-.ig-nav-link:hover {
+.ig-nav-admin {
+ background-color: #ec5228 !important;
+}
+.ig-nav-admin a,
+.ig-nav-admin span {
+ color: #fff !important;
+}
+.ig-nav-admin .ig-nav-link:hover {
+ background-color: rgba(255, 255, 255, 0.1) !important;
+}
+.ig-nav-admin .ig-nav-home:hover {
+ background-color: rgba(255, 255, 255, 0.1) !important;
+}
+.ig-nav-admin .ig-nav-link:hover {
+ background-color: rgba(255, 255, 255, 0.1) !important;
  cursor: pointer;
+
 }
-.ig-page-title {
- position: relative;
- margin: 60px auto 0;
- width: 800px;
- max-width: 90%;
- padding: 20px;
- font-size: 1.8em;
- font-weight: bold;
- border-bottom: 1px solid rgba(0, 0, 0, 0.2);
- display: block;
-}
-.ig-container {
- position: relative;
- margin: 20px auto 0;
- width: 800px;
- max-width: 90%;
-}
-.ig-content-box {
- margin-bottom: 10px;
+.ig-simple-hello {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ width: 300px;
  padding: 20px;
  background: #fff;
- border-radius: 3px;
- border: 1px solid rgba(0, 0, 0, 0.2);
- cursor: pointer;
-}
-.ig-content-title {
- line-height: 1.5em;
- font-weight: bold;
-}
-.ig-content-meta {
- font-size: 0.8em;
- color: #666;
-}
-.ig-content-data {
- margin-top: 10px;
- line-height: 1.5em;
+ border-radius: 8px;
+ border: 1px solid rgba(0, 0, 0, 0.1);
+ box-shadow: 0 0 1px #000000bf;
 }
 </style>
