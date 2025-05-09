@@ -2,7 +2,9 @@ import NavBar from '@/components/NavBar.vue';
 <template>
   <client-only>
     <NavBar />
-    <div id="igMain" class="ig-main"></div>
+    <div id="igMain" class="ig-main">
+      <Terms />
+    </div>
     <Copyright />
   </client-only>
 </template>
