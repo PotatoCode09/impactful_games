@@ -214,7 +214,7 @@
           If you have any questions or concerns about this Privacy Policy or our
           data practices, please contact us at:
         </p>
-        <p class="contact-info">[Insert Contact Information]</p>
+        <p class="contact-info">impactfulgames.supp@gmail.com</p>
       </div>
 
       <div class="privacy-policy-footer">
