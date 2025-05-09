@@ -1,21 +1,24 @@
-<script lang="ts"></script>
+import NavBar from '@/components/NavBar.vue';
 <template>
- <client-only>
-  <NavBar />
- <div id="igMain" class="ig-main"></div>
- <Copyright />
- </client-only>
+  <client-only>
+    <NavBar :navAdminMode="navAdminMode" />
+    <Terms />
+    <Copyright />
+  </client-only>
 </template>
+
 <script setup lang="ts">
 import { useSeoMeta, useHead } from '@vueuse/head';
-const title = "Impactful Games | Home";
-const description = "A game catalogue with interactive features that provide detailed information on video games across a wide range of genres, inspired by the structure and functionality of platforms like MyAnimeList.";
+const title = "Kamotech | Terms of Service";
+const description = "Terms of Service for Kamotech, a game catalogue platform that allows users to browse, rate, comment, and interact with various video games across multiple genres.";
+
 useSeoMeta({
- title: () => title,
- description: () => description,
- charset: "utf-8",
- viewport: "width=device-width, initial-scale=1.0"
+  title: () => title,
+  description: () => description,
+  charset: "utf-8",
+  viewport: "width=device-width, initial-scale=1.0"
 });
+
 useHead({
   link: [
     { rel: 'icon', type: 'image/png', href: '/joystick.png' },
@@ -26,6 +29,12 @@ useHead({
     { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Russo+One&display=swap' }
   ]
 });
+
+const userLevel = useCookie<number>("userLevel", {
+  sameSite: "none",
+  secure: true,
+  maxAge: 60 * 60 * 24,
+});
+userLevel.value = userLevel.value ?? -1;
+let navAdminMode = userLevel.value >= 2 ? "ig-nav-admin" : "";
 </script>
-<style scoped></style>
-<style></style>

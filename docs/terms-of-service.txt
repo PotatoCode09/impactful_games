@@ -1,4 +1,4 @@
-Terms of Service for Game Catalogue Platform
+Terms of Service for Kamotech
 
 1. Introduction
 Welcome to [Platform Name], a game catalogue platform that allows users to browse, rate, comment, and interact with various video games across multiple genres. By using our platform, you agree to comply with these Terms of Service ("ToS"). If you do not agree, please do not use the platform.
@@ -66,5 +66,5 @@ We may update these ToS from time to time. Any changes will be posted on this pa
 12. Contact Us
 If you have any questions or concerns regarding these ToS or our privacy practices, please contact us at:
 
-[Insert Contact Information]
+[impactfulgames.supp@gmail.com]
  
