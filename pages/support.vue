@@ -2,7 +2,7 @@
   <client-only>
     <NavBar />
     <main id="igMain" class="ig-main">
-      <section>
+      <section class="ig-support">
         <h1>Account Deletion</h1>
         <p><strong>Effective Date:</strong> Month Day, Year</p>
 

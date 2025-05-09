@@ -182,3 +182,46 @@ background-color: #FF6000cc; /* append cc for opacity */
     .ig-footer-copyright {
     margin-top: 5px;
     }
+
+/* Support Page */
+.ig-support {
+  max-width: 800px;
+  margin: 80px auto 40px;
+  padding: 20px 30px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-size: 1em;
+  color: #333;
+  line-height: 1.6;
+}
+
+.ig-support h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #111;
+  font-weight: bold;
+}
+
+.ig-support h2 {
+  font-size: 1.4em;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #222;
+  font-weight: 600;
+}
+
+.ig-support p {
+  margin-bottom: 1em;
+}
+
+.ig-support a {
+  color: #FF6000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.ig-support a:hover {
+  text-decoration: underline;
+}
