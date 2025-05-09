@@ -8,14 +8,11 @@ import NavBar from '@/components/NavBar.vue';
 </template>
 
 <script setup lang="ts">
-import { useSeoMeta, useHead } from '@vueuse/head';
-const title = "Kamotech | Terms of Service";
-const description = "Terms of Service for Kamotech, a game catalogue platform that allows users to browse, rate, comment, and interact with various video games across multiple genres.";
-
 import { useSeoMeta, useHead } from "@vueuse/head";
-const title = "Impactful Games | Home";
+const title = "Kamotech | Terms of Service";
 const description =
-  "A game catalogue with interactive features that provide detailed information on video games across a wide range of genres, inspired by the structure and functionality of platforms like MyAnimeList.";
+  "Terms of Service for Kamotech, a game catalogue platform that allows users to browse, rate, comment, and interact with various video games across multiple genres.";
+
 useSeoMeta({
   title: () => title,
   description: () => description,
