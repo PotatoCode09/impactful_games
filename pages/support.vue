@@ -4,7 +4,7 @@
     <main id="igMain" class="ig-main">
       <section class="ig-support">
         <h1>Account Deletion</h1>
-        <p><strong>Effective Date:</strong> Month Day, Year</p>
+        <p><strong>Effective Date:</strong> {{ effectiveDate }}</p>
 
         <h2>Data Retention and Deletion</h2>
         <p>
@@ -26,10 +26,18 @@
   </client-only>
 </template>
 
+
 <script setup lang="ts">
 import { useSeoMeta, useHead } from "@vueuse/head";
 import NavBar from "@/components/NavBar.vue";
 import Copyright from "@/components/Copyright.vue";
+
+// Dynamic effective date
+const effectiveDate = new Date().toLocaleDateString(undefined, {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
 
 const title = "Impactful Games | Support";
 const description =
@@ -56,6 +64,7 @@ useHead({
   ],
 });
 </script>
+
 
 <style scoped>
 /* Add any scoped styles here if necessary */
