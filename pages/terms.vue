@@ -5,6 +5,7 @@ import NavBar from '@/components/NavBar.vue';
     <div id="igMain" class="ig-main">
       <Terms />
     </div>
+    <AboutUs />
     <Copyright />
   </client-only>
 </template>
