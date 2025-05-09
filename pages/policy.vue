@@ -5,6 +5,7 @@
     <div id="igMain" class="ig-main">
       <Policy />
     </div>
+    <AboutUs />
     <Copyright />
   </client-only>
 </template>

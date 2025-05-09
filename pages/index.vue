@@ -7,6 +7,7 @@
       <div id="igContainer" class="ig-container"></div>
     </div>
     <Cookies />
+    <AboutUs />
     <Copyright />
   </client-only>
 </template>
