@@ -178,9 +178,6 @@ body {
   text-decoration: none;
   color: #666;
 }
-.ig-footer-copyright {
-  margin-top: 5px;
-}
 
 /* Support Page */
 .ig-support {
@@ -340,4 +337,23 @@ body {
   .ig-section-title {
     font-size: 1.25rem;
   }
+}
+
+/* For the about us footer*/
+.about-link-footer {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 0.8em;
+  text-align: center;
+  color: #666;
+}
+
+.about-footer-links a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #666;
+}
+
+.about-footer-links {
+  margin-top: 5px;
 }
