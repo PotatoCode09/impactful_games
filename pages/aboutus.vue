@@ -9,11 +9,8 @@
           <ul>
             <li v-for="member in team" :key="member.name">
               <p>
-                <strong>{{ member.name }}</strong
-                ><br />
-                <span>{{ member.role }}</span
-                ><br />
-                <a :href="member.link">Learn more</a>
+                <strong><a :href="member.link">{{ member.name }}</a></strong><br />
+                <span>{{ member.role }}</span>
               </p>
             </li>
           </ul>
@@ -23,10 +20,8 @@
     <Copyright />
   </client-only>
 </template>
-
 <script setup lang="ts">
 import { useSeoMeta, useHead } from "@vueuse/head";
-
 const title = "Impactful Games | Home";
 const description =
   "A game catalogue with interactive features that provide detailed information on video games across a wide range of genres, inspired by the structure and functionality of platforms like MyAnimeList.";
@@ -49,58 +44,15 @@ useHead({
     },
   ],
 });
-
 const team = [
   {
-    name: "Arañez",
+    name: " John Patrick Y. Arañez",
     role: "Project Lead / Software Developer",
     link: "/jarañez",
   },
-  { name: "Abenoja", role: "Software Developer", link: "/jabenoja" },
-  { name: "Andrade", role: "Software Developer", link: "/jandrade" },
-  { name: "Lelis", role: "Software Developer", link: "/nlelis" },
-  { name: "Posas", role: "Software Developer", link: "/rposas" },
+  { name: "Jaaseia Gian Abenoja", role: "Software Developer", link: "/jabenoja" },
+  { name: "Jamir Oasis M. Andrade", role: "Software Developer", link: "/jandrade" },
+  { name: "Nietzchan Jake Lelis", role: "Software Developer", link: "/nlelis" },
+  { name: "Rico Martin Carl V. Posas", role: "Software Developer", link: "/rposas" },
 ];
 </script>
-
-<style scoped>
-.about-us-container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-family: "Roboto Flex", sans-serif;
-  background-color: #f9f9f9;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
-.about-us-container h1 {
-  font-family: "Teko", sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.team-members {
-  margin-top: 2rem;
-}
-
-.team-members h2 {
-  font-family: "Teko", sans-serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.team-members ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.team-members li {
-  margin-bottom: 1rem;
-}
-
-.team-members a {
-  text-decoration: none;
-  color: #007bff;
-}
-</style>
