@@ -51,11 +51,15 @@ useHead({
 });
 
 const team = [
-  { name: "Arañez", role: "Project Lead / Software Developer" },
-  { name: "Abenoja", role: "Software Developer" },
-  { name: "Andrade", role: "Software Developer" },
-  { name: "Lelis", role: "Software Developer" },
-  { name: "Posas", role: "Software Developer" },
+  {
+    name: "Arañez",
+    role: "Project Lead / Software Developer",
+    link: "/jarañez",
+  },
+  { name: "Abenoja", role: "Software Developer", link: "/jabenoja" },
+  { name: "Andrade", role: "Software Developer", link: "/jandrade" },
+  { name: "Lelis", role: "Software Developer", link: "/nlelis" },
+  { name: "Posas", role: "Software Developer", link: "/rposas" },
 ];
 </script>
 
