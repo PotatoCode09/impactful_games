@@ -2,13 +2,30 @@
   <div class="privacy-policy-container">
     <div class="privacy-policy-content">
       <h1 class="privacy-policy-title">Privacy Policy</h1>
+      <p class="effective-date">Effective as of: {{ currentDate }}</p>
+      
+      <!-- Table of Contents -->
+      <div class="privacy-nav">
+        <a href="#introduction" class="nav-link">Introduction</a>
+        <a href="#data-collection" class="nav-link">Data Collection</a>
+        <a href="#purpose" class="nav-link">Purpose of Data Collection</a>
+        <a href="#legal-basis" class="nav-link">Legal Basis for Data Processing</a>
+        <a href="#data-sharing" class="nav-link">Data Sharing</a>
+        <a href="#data-retention" class="nav-link">Data Retention</a>
+        <a href="#user-rights" class="nav-link">User Rights</a>
+        <a href="#data-security" class="nav-link">Data Security</a>
+        <a href="#international" class="nav-link">International Data Transfers</a>
+        <a href="#children" class="nav-link">Children's Privacy</a>
+        <a href="#changes" class="nav-link">Changes to Privacy Policy</a>
+        <a href="#contact" class="nav-link">Contact Us</a>
+      </div>
 
-      <div class="privacy-policy-section">
+      <div id="introduction" class="privacy-policy-section">
         <h2 class="section-title">1. Introduction</h2>
         <p>
           We value your privacy and are committed to protecting your personal
           data. This Privacy Policy outlines how we collect, use, store, and
-          share your personal information when you use the [Platform Name] game
+          share your personal information when you use the Kamotech game
           catalogue platform. By using our services, you consent to the
           practices described in this policy.
         </p>
@@ -18,7 +35,7 @@
         </p>
       </div>
 
-      <div class="privacy-policy-section">
+      <div id="data-collection" class="privacy-policy-section">
         <h2 class="section-title">2. Data Collection</h2>
         <p>We collect the following types of personal data:</p>
         <ul class="policy-list">
@@ -38,7 +55,7 @@
         </ul>
       </div>
 
-      <div class="privacy-policy-section">
+      <div id="purpose" class="privacy-policy-section">
         <h2 class="section-title">3. Purpose of Data Collection</h2>
         <p>We process your personal data for the following purposes:</p>
         <ul class="policy-list">
@@ -65,7 +82,7 @@
         </ul>
       </div>
 
-      <div class="privacy-policy-section">
+      <div id="legal-basis" class="privacy-policy-section">
         <h2 class="section-title">4. Legal Basis for Data Processing</h2>
         <p>
           We process your personal data based on the following legal grounds
@@ -91,7 +108,7 @@
         </ul>
       </div>
 
-      <div class="privacy-policy-section">
+      <div id="data-sharing" class="privacy-policy-section">
         <h2 class="section-title">5. Data Sharing</h2>
         <p>
           We will not share your personal data with third parties except in the
@@ -117,7 +134,7 @@
         </ul>
       </div>
 
-      <div class="privacy-policy-section">
+      <div id="data-retention" class="privacy-policy-section">
         <h2 class="section-title">6. Data Retention</h2>
         <p>
           We retain your personal data only for as long as necessary to fulfill
@@ -127,7 +144,7 @@
         </p>
       </div>
 
-      <div class="privacy-policy-section">
+      <div id="user-rights" class="privacy-policy-section">
         <h2 class="section-title">7. User Rights</h2>
         <p>You have the following rights regarding your personal data:</p>
         <ul class="policy-list">
@@ -161,12 +178,11 @@
           </li>
         </ul>
         <p>
-          To exercise any of these rights, please contact us at [Insert Contact
-          Information].
+          To exercise any of these rights, please contact us at impactfulgames.supp@gmail.com.
         </p>
       </div>
 
-      <div class="privacy-policy-section">
+      <div id="data-security" class="privacy-policy-section">
         <h2 class="section-title">8. Data Security</h2>
         <p>
           We take appropriate technical and organizational measures to protect
@@ -177,7 +193,7 @@
         </p>
       </div>
 
-      <div class="privacy-policy-section">
+      <div id="international" class="privacy-policy-section">
         <h2 class="section-title">9. International Data Transfers</h2>
         <p>
           Your personal data may be transferred to and processed in countries
@@ -188,7 +204,7 @@
         </p>
       </div>
 
-      <div class="privacy-policy-section">
+      <div id="children" class="privacy-policy-section">
         <h2 class="section-title">10. Children's Privacy</h2>
         <p>
           Our platform is not intended for children under the age of 13. We do
@@ -198,7 +214,7 @@
         </p>
       </div>
 
-      <div class="privacy-policy-section">
+      <div id="changes" class="privacy-policy-section">
         <h2 class="section-title">11. Changes to This Privacy Policy</h2>
         <p>
           We may update this Privacy Policy from time to time. Any changes will
@@ -208,7 +224,7 @@
         </p>
       </div>
 
-      <div class="privacy-policy-section">
+      <div id="contact" class="privacy-policy-section">
         <h2 class="section-title">12. Contact Us</h2>
         <p>
           If you have any questions or concerns about this Privacy Policy or our
@@ -246,9 +262,9 @@ export default {
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
-  background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
+  background-color: transparent;
 }
 
 .privacy-policy-content {
@@ -256,30 +272,52 @@ export default {
 }
 
 .privacy-policy-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: #333;
-  text-align: center;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.effective-date {
   margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #eaeaea;
+  color: #333;
+  text-align: left;
+}
+
+
+.privacy-nav {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.nav-link {
+  color: #ff6000;
+  text-decoration: none;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
 }
 
 .privacy-policy-section {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .section-title {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
   color: #333;
-  margin-bottom: 1rem;
-  font-weight: 600;
+  margin-bottom: 1.5rem;
 }
 
 .policy-list {
   list-style-type: disc;
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .policy-list li {
@@ -298,6 +336,7 @@ p {
 .contact-info {
   margin-top: 0.5rem;
   font-style: italic;
+  color: #ff6000;
 }
 
 .privacy-policy-footer {
