@@ -214,7 +214,7 @@
           If you have any questions or concerns about this Privacy Policy or our
           data practices, please contact us at:
         </p>
-        <p class="contact-info">[Insert Contact Information]</p>
+        <p class="contact-info">impactfulgames.supp@gmail.com</p>
       </div>
 
       <div class="privacy-policy-footer">
@@ -258,7 +258,7 @@ export default {
 .privacy-policy-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #2c3e50;
+  color: #333;
   text-align: center;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
@@ -271,7 +271,7 @@ export default {
 
 .section-title {
   font-size: 1.5rem;
-  color: #2c3e50;
+  color: #333;
   margin-bottom: 1rem;
   font-weight: 600;
 }
@@ -288,7 +288,7 @@ export default {
 
 .highlight {
   font-weight: 700;
-  color: #2c3e50;
+  color: #333;
 }
 
 p {
@@ -305,7 +305,7 @@ p {
   padding-top: 1rem;
   border-top: 1px solid #eaeaea;
   font-size: 0.9rem;
-  color: #666;
+  color: #333;
   text-align: center;
 }
 
