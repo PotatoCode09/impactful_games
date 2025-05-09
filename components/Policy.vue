@@ -3,18 +3,22 @@
     <div class="privacy-policy-content">
       <h1 class="privacy-policy-title">Privacy Policy</h1>
       <p class="effective-date">Effective as of: {{ currentDate }}</p>
-      
+
       <!-- Table of Contents -->
       <div class="privacy-nav">
         <a href="#introduction" class="nav-link">Introduction</a>
         <a href="#data-collection" class="nav-link">Data Collection</a>
         <a href="#purpose" class="nav-link">Purpose of Data Collection</a>
-        <a href="#legal-basis" class="nav-link">Legal Basis for Data Processing</a>
+        <a href="#legal-basis" class="nav-link"
+          >Legal Basis for Data Processing</a
+        >
         <a href="#data-sharing" class="nav-link">Data Sharing</a>
         <a href="#data-retention" class="nav-link">Data Retention</a>
         <a href="#user-rights" class="nav-link">User Rights</a>
         <a href="#data-security" class="nav-link">Data Security</a>
-        <a href="#international" class="nav-link">International Data Transfers</a>
+        <a href="#international" class="nav-link"
+          >International Data Transfers</a
+        >
         <a href="#children" class="nav-link">Children's Privacy</a>
         <a href="#changes" class="nav-link">Changes to Privacy Policy</a>
         <a href="#contact" class="nav-link">Contact Us</a>
@@ -178,7 +182,8 @@
           </li>
         </ul>
         <p>
-          To exercise any of these rights, please contact us at impactfulgames.supp@gmail.com.
+          To exercise any of these rights, please contact us at
+          impactfulgames.supp@gmail.com.
         </p>
       </div>
 
@@ -262,7 +267,6 @@ export default {
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   background-color: transparent;
 }
@@ -284,7 +288,6 @@ export default {
   color: #333;
   text-align: left;
 }
-
 
 .privacy-nav {
   display: flex;
